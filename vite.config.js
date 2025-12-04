@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api" : {
-        target: "https://fuel-router-csj6.onrender.com",
+        target: "http://localhost:8000",
         changeOrigin: true,
       },
     },
