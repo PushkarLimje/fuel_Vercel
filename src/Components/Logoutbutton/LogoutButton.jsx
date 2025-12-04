@@ -10,7 +10,7 @@ function LogoutButton() {
   
   const handleLogout = async () => {
     try {
-      await axios.post("/api/v1/users/logout", {}, {
+      await axios.post("https://fuel-router-csj6.onrender.com/api/v1/users/logout", {}, {
         withCredentials: true,
       });
 
