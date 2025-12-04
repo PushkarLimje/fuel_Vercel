@@ -45,7 +45,7 @@ export default function Register() {
 
     try {
       setLoading(true);
-      const response = await fetch("/api/v1/users/register", {
+      const response = await fetch("https://fuel-router-csj6.onrender.com/api/v1/users/register", {
         method: "POST",
         body: data,
       });

@@ -51,14 +51,14 @@ export default function TripHistory() {
       console.log("🔍 Fetching routes and reports...");
       
       // Fetch routes
-      const routesRes = await api.get('/routes');
+      const routesRes = await api.get('https://fuel-router-csj6.onrender.com/routes');
       console.log("📊 Routes response:", routesRes.data);
       setRoutes(routesRes.data.data || []);
       console.log("✅ Loaded routes:", routesRes.data.data?.length || 0);
       
       // Try to fetch reports (optional - won't break if endpoint doesn't exist)
       try {
-        const reportsRes = await api.get('/reports');
+        const reportsRes = await api.get('https://fuel-router-csj6.onrender.com/reports');
         console.log("📋 Reports response:", reportsRes.data);
         setReports(reportsRes.data.data || []);
         console.log("✅ Loaded reports:", reportsRes.data.data?.length || 0);
@@ -88,7 +88,7 @@ export default function TripHistory() {
   
   try {
     console.log("📊 Generating report with data:", requestData);
-    const response = await api.post(`/reports/generate/${selectedRouteForReport._id}`, requestData);
+    const response = await api.post(`https://fuel-router-csj6.onrender.com/reports/generate/${selectedRouteForReport._id}`, requestData);
     //! alert("Report generated successfully!");
     showToast("Report generated successfully!", 'success');
     fetchData();
@@ -107,7 +107,7 @@ export default function TripHistory() {
       console.log("📥 Starting download for report:", reportId);
       console.log("🔑 Token exists:", !!localStorage.getItem('accessToken'));
       
-      const downloadUrl = `http://localhost:8000/api/v1/reports/download/${reportId}`;
+      const downloadUrl = `https://fuel-router-csj6.onrender.com/api/v1/reports/download/${reportId}`;
       console.log("🔗 Download URL:", downloadUrl);
       
       const response = await fetch(downloadUrl, {

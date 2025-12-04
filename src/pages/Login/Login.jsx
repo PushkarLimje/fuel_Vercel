@@ -28,7 +28,7 @@ export default function Login() {
 
     try {
       const response = await axios.post(
-        "/api/v1/users/login",
+        "https://fuel-router-csj6.onrender.com/api/v1/users/login",
         {
           email: formData.email,
           password: formData.password,

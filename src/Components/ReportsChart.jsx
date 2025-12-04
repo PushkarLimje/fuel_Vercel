@@ -6,7 +6,7 @@ const ReportsChart = ({ userId }) => {
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
-    axios.get(`/api/dashboard/reports/${userId}`).then((res) => {
+    axios.get(`https://fuel-router-csj6.onrender.com/api/dashboard/reports/${userId}`).then((res) => {
       setReports(res.data);
     });
   }, [userId]);

@@ -22,7 +22,7 @@ export default function Settings() {
   const [isEditing, setIsEditing] = useState(false);
   //const { showToast, ToastContainer } = useToast();
   // API base URL - update this to your backend URL
-  const API_BASE_URL = "http://localhost:8000/api/v1";
+  const API_BASE_URL = "https://fuel-router-csj6.onrender.com/api/v1";
 
   useEffect(() => {
     loadUserData();
